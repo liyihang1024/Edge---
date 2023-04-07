@@ -1,5 +1,5 @@
 chrome.contextMenus.create({
-    title: 'Baidu搜索：%s', // %s表示选中的文字
+    title: 'Baidu搜索', // %s表示选中的文字
     contexts: ['selection'], // 只有当选中文字时才会出现此右键菜单
     onclick: function(params)
     {
@@ -9,7 +9,7 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
-    title: 'Google搜索：%s', // %s表示选中的文字
+    title: 'Google搜索', // %s表示选中的文字
     contexts: ['selection'], // 只有当选中文字时才会出现此右键菜单
     onclick: function(params)
     {
@@ -19,7 +19,7 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
-    title: 'Bing搜索：%s', // %s表示选中的文字
+    title: 'Bing搜索', // %s表示选中的文字
     contexts: ['selection'], // 只有当选中文字时才会出现此右键菜单
     onclick: function(params)
     {
@@ -28,13 +28,14 @@ chrome.contextMenus.create({
     }
 });
 
+// 添加分割线
 chrome.contextMenus.create({
     type: 'separator',
-    // contexts: ["selection"]
+    contexts: ['selection']
   });
 
 chrome.contextMenus.create({
-    title: 'Baidu学术搜索：%s', // %s表示选中的文字
+    title: 'Baidu学术搜索', // %s表示选中的文字
     contexts: ['selection'], // 只有当选中文字时才会出现此右键菜单
     onclick: function(params)
     {
@@ -44,7 +45,7 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
-    title: 'Google学术搜索：%s', // %s表示选中的文字
+    title: 'Google学术搜索', // %s表示选中的文字
     contexts: ['selection'], // 只有当选中文字时才会出现此右键菜单
     onclick: function(params)
     {
@@ -54,7 +55,23 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
-    title: 'Baidu翻译：%s', // %s表示选中的文字
+    title: 'X-MOL搜索', // %s表示选中的文字
+    contexts: ['selection'], // 只有当选中文字时才会出现此右键菜单
+    onclick: function(params)
+    {
+        // 注意不能使用location.href，因为location是属于background的window对象
+        chrome.tabs.create({url: 'https://www.x-mol.com/paper/search/q?option=' + encodeURI(params.selectionText)});
+    }
+});
+
+// 添加分割线
+chrome.contextMenus.create({
+    type: 'separator',
+    contexts: ['selection']
+  });
+
+chrome.contextMenus.create({
+    title: 'Baidu翻译', // %s表示选中的文字
     contexts: ['selection'], // 只有当选中文字时才会出现此右键菜单
     onclick: function(params)
     {
@@ -64,7 +81,7 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
-    title: 'Google翻译：%s', // %s表示选中的文字
+    title: 'Google翻译', // %s表示选中的文字
     contexts: ['selection'], // 只有当选中文字时才会出现此右键菜单
     onclick: function(params)
     {
@@ -73,8 +90,14 @@ chrome.contextMenus.create({
     }
 });
 
+// 添加分割线
 chrome.contextMenus.create({
-    title: 'BiliBili搜索：%s', // %s表示选中的文字
+    type: 'separator',
+    contexts: ['selection']
+  });
+
+chrome.contextMenus.create({
+    title: 'BiliBili搜索', // %s表示选中的文字
     contexts: ['selection'], // 只有当选中文字时才会出现此右键菜单
     onclick: function(params)
     {
@@ -84,7 +107,7 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
-    title: 'YouTube搜索：%s', // %s表示选中的文字
+    title: 'YouTube搜索', // %s表示选中的文字
     contexts: ['selection'], // 只有当选中文字时才会出现此右键菜单
     onclick: function(params)
     {
@@ -93,18 +116,14 @@ chrome.contextMenus.create({
     }
 });
 
+// 添加分割线
 chrome.contextMenus.create({
-    title: 'X-MOL搜索：%s', // %s表示选中的文字
-    contexts: ['selection'], // 只有当选中文字时才会出现此右键菜单
-    onclick: function(params)
-    {
-        // 注意不能使用location.href，因为location是属于background的window对象
-        chrome.tabs.create({url: 'https://www.x-mol.com/paper/search/q?option=' + encodeURI(params.selectionText)});
-    }
-});
+    type: 'separator',
+    contexts: ['selection']
+  });
 
 chrome.contextMenus.create({
-    title: 'Materials Project：%s', // %s表示选中的文字
+    title: 'Materials Project', // %s表示选中的文字
     contexts: ['selection'], // 只有当选中文字时才会出现此右键菜单
     onclick: function(params)
     {
