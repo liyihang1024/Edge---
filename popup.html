@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>二十四桥明月夜</title>
+    <style>
+      /* 设置背景 */
+      body {
+        background-color: #333333;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: hidden;
+        background-image: url("images/background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 500px;
+        min-height: 300px;
+      }
+
+      /* 设置顶部标题 */
+      h1 {
+        font-family: cursive;   /* 设置字体为草书体 */
+        font-size: 2rem;      /* 设置字号为2倍的根字号大小，即相对于页面默认字体大小的相对单位 */
+        position: absolute;     /* 将元素的定位类型设置为绝对定位 */
+        top: 20px;              /* 设置标题的位置，距离顶部和左边分别为 20px */
+        left: 20px;
+        margin: 0;              /* 清除标题的外边距和内边距 */
+        padding: 0;
+        z-index: 10;            /* 设置元素的堆叠顺序，使其置于其他元素之上 */
+        animation: fadeInUp 2s; /* 设置标题的动画效果 */
+      }
+
+      /* 设置按钮 */
+      .btn {
+        display: inline-block;
+        font-family: Arial, sans-serif;
+        font-size: 1.5rem;
+        padding: 1rem 2rem;
+        border-radius: 5px;
+        text-decoration: none;
+        background-color: #ffffff;
+        color: #333333;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        /* transition: all 0.3s ease-in-out;  过渡效果，0.5秒钟渐变完成 */
+        /* opacity: 1; */
+      }
+
+      /* 鼠标悬停时设置按钮颜色 */
+      .btn:hover {
+        background-color: #333333;
+        color: #ffffff;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        transform: translateY(-5px);  /* 鼠标悬停时，按钮向上移动5px */
+      }
+
+      /* 设置第一个按钮 */
+      #btn1 {
+        position: absolute;
+        top: 70%;
+        left: calc(50% - 200px); /* 修改了 left 属性，使按钮不会互相遮盖 */
+        /* transform: translate(-50%, -50%); */
+        animation: fadeInDown 2s;
+        animation-delay: 0s;
+        opacity: 1; /* 设置按钮初始时不可见 */
+      }
+
+      /* 设置第二个按钮 */
+      #btn2 {
+        position: absolute;
+        top: 70%;
+        left: calc(50% + 50px); /* 修改了 left 属性，使按钮不会互相遮盖 */
+        /* transform: translate(-50%, -50%); */
+        animation: fadeInDown 2s; /* 设置按钮的动画效果,在2s内完成成 */
+        animation-delay: 0s;   /* 设置延迟时间，使按钮的动画效果不会同时出现 */
+        opacity: 1; /* 设置按钮初始时不可见 */
+      }
+
+      /* 渐显动画 */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* 渐显动画 */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 设置顶部标题 -->
+    <h1>晚食以当肉，安步以当车!<br> <span style="font-size: 18px; margin-left: 100px;"> ——《战国策·齐四·齐宣王见颜斶》</span> </h1>
+
+
+    <!-- 设置第一个按钮跳转到 Github -->
+    <a
+    id="btn1"
+    class="btn"
+    href="https://github.com/liyihang1024/"
+    target="_blank"
+    >GitHub</a>
+
+    <!-- 设置第二个按钮跳转到个人主页 -->
+    <a
+    id="btn2"
+    class="btn"
+    href="https://liyihang1024.github.io/"
+    target="_blank"
+    >个人主页</a>
+
+    <!-- 添加一些动画效果，让页面更炫酷 -->
+    <script src="heart.js"></script> <!-- 网页鼠标点击特效（爱心） -->
+
+    <!-- <script>
+    const btn1 = document.getElementById("btn1");
+    const btn2 = document.getElementById("btn2");
+
+    // 鼠标移动到按钮上时，让按钮闪烁
+    function blinkBtn(btn) {
+    btn.style.backgroundColor = "#ff0000";
+    setTimeout(function () {
+        btn.style.backgroundColor = "#363636";
+        // btn.style.opacity = 1;
+    }, 500);
+    }
+
+    btn1.addEventListener("mouseover", function () {
+    blinkBtn(btn1);
+    });
+
+    btn2.addEventListener("mouseover", function () {
+    blinkBtn(btn2);
+    });
+    </script> -->
+  </body>
+  </html>
+
