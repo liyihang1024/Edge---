@@ -23,7 +23,7 @@
   },
   "permissions": ["contextMenus","tabs"],            // contextMenus代表右键菜单，tabs代表标签
 	
-  "homepage_url": "https://liyihang1024.github.io",  // 插件官方主页，这个很重要，不要浪费了这个免费广告位
+  "homepage_url": "https://github.com/liyihang1024/Edge-extension-right_click_search",  // 插件官方主页，这个很重要，不要浪费了这个免费广告位
 
   "options_ui":
 	{
